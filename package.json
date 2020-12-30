@@ -1,5 +1,5 @@
 {
-  "name": "hotwire-debug",
+  "name": "@beflagrant/hotwire-debug",
   "version": "0.1.0",
   "description": "Hotwire-debug highlights changes that occur via turbo.",
   "main": "index.js",
