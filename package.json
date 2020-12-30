@@ -1,0 +1,27 @@
+{
+  "name": "hotwire-debug",
+  "version": "0.1.0",
+  "description": "Hotwire-debug highlights changes that occur via turbo.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/beflagrant/hotwire-debug.git"
+  },
+  "author": "Jim Remsik <jim@beflagrant.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beflagrant/hotwire-debug/issues"
+  },
+  "homepage": "https://github.com/beflagrant/hotwire-debug#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hotwire",
+    "rails",
+    "debug"
+  ]
+}
