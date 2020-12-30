@@ -1,0 +1,61 @@
+:root {
+  --color-teal: rgba(95, 206, 214, 1);
+  --color-pink: rgba(223, 116, 168, 1);
+  --color-yellow: rgba(255, 224, 0, 1);
+}
+body > #hotwire-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  height: 2rem;
+  width: 2rem;
+}
+body[data-hotwire-debug] > #hotwire-toggle {
+  svg path {
+    fill: var(--color-yellow);
+  }
+}
+#hotwire-toggle {
+  &:hover svg path {
+    fill: var(--color-teal) !important;
+  }
+  z-index: 2000000;
+}
+body[data-hotwire-debug] {
+  turbo-frame > div, turbo-frame > form {
+    border-radius: 0 !important;
+    animation-name: highlight-frame-change;
+    animation-duration: 2s;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: attr(data-turbo-frame-id);
+      z-index: 1000000;
+      padding: 0.5rem;
+      color: black;
+    }
+  }
+  turbo-frame > div {
+    border: 2px solid var(--color-teal) !important;
+    &:after {
+      background-color: var(--color-teal);
+    }
+  }
+  turbo-frame > form {
+    border: 2px solid var(--color-pink) !important;
+    &:after {
+      background-color: var(--color-pink);
+    }
+  }
+  @keyframes highlight-frame-change {
+    from {
+      background-color: var(--color-yellow);
+    }
+    to {
+      background-color: transparent;
+    }
+  }
+}
