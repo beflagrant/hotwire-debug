@@ -1,6 +1,8 @@
 :root {
   --color-teal: rgba(95, 206, 214, 1);
+  --color-teal-trans: rgba(95, 206, 214, 0.4);
   --color-pink: rgba(223, 116, 168, 1);
+  --color-pink-trans: rgba(223, 116, 168, 0.4);
   --color-yellow: rgba(255, 224, 0, 1);
 }
 body > #hotwire-toggle {
@@ -9,53 +11,69 @@ body > #hotwire-toggle {
   right: 2rem;
   height: 2rem;
   width: 2rem;
-}
-body[data-hotwire-debug] > #hotwire-toggle {
+  z-index: 20;
+  
   svg path {
-    fill: var(--color-yellow);
+    fill: var(--color-black) !important;
+    transition: fill ease-in-out 0.3s;
   }
-}
-#hotwire-toggle {
   &:hover svg path {
-    fill: var(--color-teal) !important;
+    fill: var(--color-pink) !important;
   }
-  z-index: 2000000;
 }
-body[data-hotwire-debug] {
-  turbo-frame > div, turbo-frame > form {
-    border-radius: 0 !important;
-    animation-name: highlight-frame-change;
-    animation-duration: 2s;
-    position: relative;
+html[data-hotwire-debug] #hotwire-toggle {
+  svg path {
+    fill: var(--color-yellow) !important;
+    stroke: var(--color-pink);
+  }
 
-    &:after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      content: attr(data-turbo-frame-id);
-      z-index: 1000000;
-      padding: 0.5rem;
-      color: black;
+  &:hover {
+    svg path {
+      stroke-width: 4px;
     }
   }
-  turbo-frame > div {
-    border: 2px solid var(--color-teal) !important;
-    &:after {
-      background-color: var(--color-teal);
+}
+[data-hotwire-debug] {
+  turbo-frame {
+    display: block;
+    transition: all ease-in-out 0.3s;
+
+    &:hover {
+      display: block;
+      position: relative;
+      box-shadow: inset 0 0 3rem var(--color-teal-trans);
+
+      &:after {
+        color: rgb(30, 120, 120) !important;
+        content: attr(id);
+        font-weight: bold;
+        position: absolute;
+        display: block;
+        top: 49%;
+        right: 1rem;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 10;
+      }
     }
-  }
-  turbo-frame > form {
-    border: 2px solid var(--color-pink) !important;
-    &:after {
-      background-color: var(--color-pink);
+
+    & > :not(turbo-frame) {
+      animation-name: highlight-frame-change;
+      animation-duration: 0.25s;
+      border-radius: 0 1rem 1rem 0;
     }
   }
   @keyframes highlight-frame-change {
-    from {
-      background-color: var(--color-yellow);
+    0% {
+      box-shadow: unset;
     }
-    to {
-      background-color: transparent;
+    50% {
+      box-shadow:inset 0 0 4rem var(--color-teal);
+    }
+    100% {
+      box-shadow: unset;
     }
   }
 }
