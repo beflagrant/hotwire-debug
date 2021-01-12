@@ -12,7 +12,7 @@ var turboEvents = [
 turboEvents.forEach(function(turboEvent) {
   document.addEventListener(turboEvent, function() {
     if (showChanges()) {
-      console.log(turboEvent);
+      console.log("⚡️ " + turboEvent);
       handleChange();
     }
   });
@@ -23,7 +23,7 @@ function showChanges () {
 }
 
 function handleChange() {
-  document.querySelectorAll('turbo-frame > div, turbo-frame > form').forEach(function(target) { 
+  document.querySelectorAll('turbo-frame:first-child').forEach(function(target) {
     target.setAttribute('data-turbo-frame-id', target.closest('turbo-frame').id);
   });
 }
