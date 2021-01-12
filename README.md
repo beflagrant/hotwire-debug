@@ -39,6 +39,10 @@ If your application does not already include stylesheets and javascripts in the 
     <%= javascript_include_tag 'application', media: 'all' %>
 ```
 
+# Options
+
+By default the color-scheme is a Hotwire-inspired teal and yellow. There's an alternate color scheme available. Add `data-hotwire-scheme-dark` to the root element.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
