@@ -1,5 +1,5 @@
 # Hotwire::Debug
-![hotwire-debug v0.1.1 demo](https://user-images.githubusercontent.com/8511/104358150-aa7bba00-54d3-11eb-88b1-a01ef3ee7ae8.gif)
+![hotwire-debug v0.1.1 demo](https://user-images.githubusercontent.com/8511/104638257-8fdc4900-566b-11eb-8230-c267d09c5de9.mov =300px)
 ## Installation
 
 Add this line to your application's Gemfile:
