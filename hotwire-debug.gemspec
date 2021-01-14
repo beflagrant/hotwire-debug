@@ -6,8 +6,8 @@ require "hotwire/debug/version"
 Gem::Specification.new do |spec|
   spec.name          = "hotwire-debug"
   spec.version       = Hotwire::Debug::VERSION
-  spec.authors       = ["Jim Remsik", "Jonathan Greenberg"]
-  spec.email         = ["jim@beflagrant.com", "jonathan@beflagrant.com"]
+  spec.authors       = ["Jim Remsik", "Jonathan Greenberg", "Ben Vandgrift"]
+  spec.email         = ["jim@beflagrant.com", "jonathan@beflagrant.com", "ben@beflagrant.com"]
 
   spec.summary       = %q{Hotwire-debug highlights changes that occur via turbo-rails.}
   spec.homepage      = "http://www.github.com/beflagrant/hotwire-debug"
