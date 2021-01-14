@@ -1,0 +1,78 @@
+:root {
+    --color-highlight: rgba(255, 232, 1, 1);
+    --color-main: rgba(95, 206, 214, 1);
+  }
+  :root[data-hotwire-scheme-dark] {
+    --color-highlight: rgba(200, 200, 200, 1);
+    --color-main: rgba(0, 0, 0, 1);
+  }
+  #hotwire-toggle {
+    height: 2rem;
+    position: fixed;
+    right: 2rem;
+    bottom: 1rem;
+    width: 2rem;
+    z-index: 20;
+   
+    svg path {
+      fill: var(--color-main) !important;
+      transition: fill ease-in-out 0.3s;
+    }
+    &:hover svg {
+      fill: var(--color-highlight) !important;
+      filter: drop-shadow(0 0 0.5rem var(--color-main));
+    }
+  }
+  :root[data-hotwire-debug] #hotwire-toggle {
+    svg path {
+      fill: var(--color-highlight) !important;
+    }
+  
+    &:hover {
+      svg path {
+        stroke-width: 0.5rem;
+        filter: drop-shadow(0 0 0.5rem var(--color-highlight));
+      }
+    }
+  }
+  [data-hotwire-debug] {
+    turbo-frame {
+      border: 1px solid var(--color-main);
+      display: block;
+      padding-top: 1rem;
+      transition: all ease-in-out 0.3s;
+      &:hover {
+        display: block;
+        position: relative;
+  
+        &:after {
+          color: var(--color-main) !important;
+          content: attr(id);
+          display: block;
+          font-weight: bold;
+          position: absolute;
+          right: 1rem;
+          top: 0;
+          z-index: 10;
+        }
+      }
+  
+      & > :not(turbo-frame) {
+        animation-duration: 0.25s;
+        animation-name: highlight-frame-change;
+        border-radius: 0 1rem 1rem 0;
+      }
+    }
+    @keyframes highlight-frame-change {
+      0% {
+        box-shadow: unset;
+      }
+      50% {
+        box-shadow:inset 0 0 4rem var(--color-main);
+      }
+      100% {
+        box-shadow: unset;
+      }
+    }
+  }
+  

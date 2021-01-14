@@ -18,18 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
-This gem adds assets into your applications vendor assets javascripts/stylesheets directories.
+### Asset Pipeline
 
-Update your `application.js`
-```js
-//= require hotwire-debug
+Run the generator:
+
 ```
-
-Update your `application.css`
-```css
-/*
-*= require hotwire-debug
-*/
+bin/rails g hotwire_debug:install
 ```
 
 If your application does not already include stylesheets and javascripts in the layout, add them.
@@ -37,6 +31,14 @@ If your application does not already include stylesheets and javascripts in the 
 ```erb
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application', media: 'all' %>
+```
+
+### Webpacker
+
+Run the generator:
+
+```
+bin/rails g hotwire_debug:webpacker
 ```
 
 # Options
