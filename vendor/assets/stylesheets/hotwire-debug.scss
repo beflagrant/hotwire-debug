@@ -1,6 +1,7 @@
 :root {
   --color-highlight: rgba(255, 232, 1, 1);
   --color-main: rgba(95, 206, 214, 1);
+  --color-secondary: rgba(239, 107, 170, 1);
 }
 :root[data-hotwire-scheme-dark] {
   --color-highlight: rgba(200, 200, 200, 1);
@@ -17,6 +18,7 @@
   svg path {
     fill: var(--color-main) !important;
     transition: fill ease-in-out 0.3s;
+    stroke: var(--color-secondary);
   }
   &:hover svg {
     fill: var(--color-highlight) !important;
@@ -26,6 +28,7 @@
 :root[data-hotwire-debug] #hotwire-toggle {
   svg path {
     fill: var(--color-highlight) !important;
+    stroke: var(--color-secondary);
   }
 
   &:hover {
