@@ -7,6 +7,24 @@
   --color-highlight: rgba(200, 200, 200, 1);
   --color-main: rgba(0, 0, 0, 1);
 }
+[data-hotwire-debug-bottom] #hotwire-toggle {
+  bottom: 1rem !important;
+}
+[data-hotwire-debug-middle] #hotwire-toggle {
+  bottom: 50% !important;
+}
+[data-hotwire-debug-top] #hotwire-toggle {
+  top: 1rem !important;
+}
+[data-hotwire-debug-center] #hotwire-toggle {
+  right: 50% !important;
+}
+[data-hotwire-debug-left] #hotwire-toggle {
+  left: 1rem !important;
+}
+[data-hotwire-debug-right] #hotwire-toggle {
+  right: 1rem !important;
+}
 #hotwire-toggle {
   height: 2rem;
   position: fixed;

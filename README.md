@@ -44,7 +44,22 @@ bin/rails g hotwire_debug:webpacker
 
 # Options
 
+## Colorscheme
 By default the color-scheme is a Hotwire-inspired teal and yellow. There's an alternate color scheme available. Add `data-hotwire-scheme-dark` to the root element.
+
+## Postition
+
+The default behavior is to appear in the lower right corner of the UI. You can change the vertical position by adding one of the following:
+
+* `data-hotwire-debug-top`
+* `data-hotwire-debug-middle`
+* `data-hotwire-debug-bottom` [Default]
+
+For hoizontal positioning you can apply to the root element:
+
+* `data-hotwire-debug-left`
+* `data-hotwire-debug-center`
+* `data-hotwire-debug-right`
 
 ## Development
 
