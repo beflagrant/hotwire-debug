@@ -6,6 +6,7 @@
 :root[data-hotwire-scheme-dark] {
   --color-highlight: rgba(200, 200, 200, 1);
   --color-main: rgba(0, 0, 0, 1);
+  --color-secondary: rgba(55, 0, 179, 1);
 }
 :root[data-hotwire-debug-bottom] #hotwire-toggle {
   bottom: 1rem !important;
@@ -66,11 +67,11 @@
     padding-top: 1rem;
     transition: all ease-in-out 0.3s;
     &:hover {
-      display: block;
       position: relative;
+      border-color: var(--color-secondary) !important;
 
       &:after {
-        color: var(--color-main) !important;
+        color: var(--color-secondary) !important;
         content: attr(id);
         display: block;
         font-weight: bold;
@@ -92,7 +93,7 @@
       box-shadow: unset;
     }
     50% {
-      box-shadow:inset 0 0 4rem var(--color-main);
+      box-shadow:inset 0 0 4rem var(--color-highlight);
     }
     100% {
       box-shadow: unset;
